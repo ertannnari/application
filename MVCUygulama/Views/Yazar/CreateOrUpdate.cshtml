@@ -1,0 +1,13 @@
+﻿@model MVCUygulama.Models.MYazar
+@{
+    ViewBag.Title = "CreateOrUpdate";
+}
+
+<h2>CreateOrUpdate</h2>
+@using (Html.BeginForm("CreateOrUpdate", "Yazar", FormMethod.Post))
+{
+    @Html.HiddenFor(m=>m.YazarID)
+    @Html.TextBoxFor(m => m.YazarAD)
+    @Html.TextBoxFor(m => m.MakaleSayisi)
+    <input type="submit" value="Submit Data" id="btnSubmit" />
+}

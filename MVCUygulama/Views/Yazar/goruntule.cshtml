@@ -1,0 +1,36 @@
+﻿@model List<MVCUygulama.Models.kitap>
+@{
+    ViewBag.Title = "goruntule";
+}
+
+<h2>goruntule</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Yazar ID</th>
+            <th>Kitap Adı</th>
+            <th>Makale ID</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.YazarID
+                </td>
+                <td>
+                    @item.makaleAdi
+                </td>
+                <td>
+                    @item.makaleId
+                </td>
+                <td>
+                    <a href="@Url.Action("CreateOrUpdate", "Yazar", new {id=item.YazarID })">Güncelle</a>
+                    <a href="@Url.Action("Delete","Yazar", new {id=item.YazarID })">Sil</a></td>
+</tr>
+        }
+    </tbody>
+
+</table>
