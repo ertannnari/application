@@ -13,6 +13,7 @@ namespace MVCUygulama.Models
         public int makaleId { get; set; }
         public string makaleAdi { get; set; }
         public int YazarID { get; set; }
+        public bool? isDeleted { get; set; }
         public MYazar MYazar { get; set; }
     }
 }

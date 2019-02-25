@@ -149,8 +149,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Data\Controllers\HomeController.cs" />
-    <Compile Include="App_Data\Controllers\YazarController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\YazarController.cs" />
     <Compile Include="DAL\Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201902151541229_updated.cs" />
     <Compile Include="Migrations\201902151541229_updated.Designer.cs">
       <DependentUpon>201902151541229_updated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902251154122_update6.cs" />
+    <Compile Include="Migrations\201902251154122_update6.Designer.cs">
+      <DependentUpon>201902251154122_update6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Ders.cs" />
@@ -228,8 +232,11 @@
     <Content Include="Views\Yazar\Index.cshtml" />
     <Content Include="Views\Yazar\CreateOrUpdate.cshtml" />
     <Content Include="Views\Yazar\goruntule.cshtml" />
+    <Content Include="Views\Yazar\CreateOrUpdateKitap.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -261,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902151541229_updated.resx">
       <DependentUpon>201902151541229_updated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902251154122_update6.resx">
+      <DependentUpon>201902251154122_update6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -3,32 +3,36 @@
     ViewBag.Title = "goruntule";
 }
 
-<h2>goruntule</h2>
+<h2>@Session["ad"]'in Kitapları</h2>
+
+<a href="@Url.Action("CreateOrUpdateKitap","Yazar",new { yazarid=Session["id"]})">EKLE</a>
+
 <table>
     <thead>
         <tr>
-            <th>Yazar ID</th>
-            <th>Kitap Adı</th>
             <th>Makale ID</th>
-           
+            <th>Kitap Adı</th>
+            
+            
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
+        
             <tr>
-                <td>
-                    @item.YazarID
-                </td>
-                <td>
-                    @item.makaleAdi
-                </td>
                 <td>
                     @item.makaleId
                 </td>
                 <td>
-                    <a href="@Url.Action("CreateOrUpdate", "Yazar", new {id=item.YazarID })">Güncelle</a>
-                    <a href="@Url.Action("Delete","Yazar", new {id=item.YazarID })">Sil</a></td>
+                    @item.makaleAdi
+                </td>
+             
+                <td>
+                    
+                    <a href="@Url.Action("CreateOrUpdateKitap", "Yazar", new {makaleid=item.makaleId ,yazarid=item.YazarID})">Güncelle</a>
+                    <a href="@Url.Action("DeleteKitap","Yazar", new {id=item.makaleId })">Sil</a>
+                </td>
 </tr>
         }
     </tbody>

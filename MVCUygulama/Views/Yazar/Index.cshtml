@@ -1,4 +1,4 @@
-﻿@model List<MVCUygulama.Models.MYazar> 
+﻿@model List<MVCUygulama.Models.MYazar>
 @{
     ViewBag.Title = "Index";
 }
@@ -6,14 +6,14 @@
 <h2>YAZARLAR</h2>
 <a href="@Url.Action("CreateOrUpdate","Yazar")">EKLE</a>
 <table>
-   <thead>
-       <tr>
-       <th>Yazar ID</th>
-           <th>Yazar Adı</th>
-           <th>Makale Sayısı</th>
-           <th>İşlemler</th>
-       </tr>
-   </thead> 
+    <thead>
+        <tr>
+            <th>Yazar ID</th>
+            <th>Yazar Adı</th>
+            <th>Makale Sayısı</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
     <tbody>
         @foreach (var item in Model)
         {
@@ -27,16 +27,16 @@
                 <td>
                     @item.MakaleSayisi
                 </td>
-                
+
                 <td>
                     <a href="@Url.Action("CreateOrUpdate", "Yazar", new {id=item.YazarID })">Güncelle</a>
                     <a href="@Url.Action("Delete","Yazar", new {id=item.YazarID })">Sil</a>
-                    <a href="@Url.Action("goruntule","Yazar",new { id = item.YazarID })">Kitapları Görüntüle</a>
-       
+                    <a href="@Url.Action("goruntule","Yazar",new { id = item.YazarID,ad=item.YazarAD })">Kitapları Görüntüle</a>
+
                 </td>
             </tr>
         }
     </tbody>
-    
+
 </table>
 

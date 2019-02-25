@@ -1,0 +1,19 @@
+﻿@model MVCUygulama.Models.kitap
+@{
+    ViewBag.Title = "CreateOrUpdateKitap";
+}
+
+<h2>CreateOrUpdateKitap</h2>
+@using (Html.BeginForm("CreateOrUpdateKitap", "Yazar", FormMethod.Post, null))
+{
+    @Html.HiddenFor(m => m.makaleId)
+    <p>makale adı</p>
+  @* <input type="text" id="makaleAdi" name="makaleAdi" @if (Model.YazarID != 0){ <text> value = "@Model.makaleAdi" </text> })/>*@
+    @Html.TextBoxFor(m => m.makaleAdi)
+    <p>yazar id</p>
+    @*<input type="text" @*value="@Model.YazarID"  id="YazarID" name="YazarID" @if (@Session["id"] != null) { <text> value="@Model.makaleId" </text> } />*@
+    @Html.TextBoxFor(m => m.YazarID)
+    <p>
+        <input type="submit" value="Submit Data" id="btnSubmit" />
+    </p>
+}
